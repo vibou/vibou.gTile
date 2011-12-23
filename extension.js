@@ -62,7 +62,7 @@ function initSettings()
     //gridSettings[SETTINGS_GRID_SIZE].push(myCustomButton);
     
      //You can change those settings to set whatever you want by default
-     gridSettings[SETTINGS_AUTO_CLOSE] = false;
+     gridSettings[SETTINGS_AUTO_CLOSE] = true;
      gridSettings[SETTINGS_ANIMATION] = true;
 }
 
@@ -196,9 +196,15 @@ function showTiling(immediate)
 	        let grid = grids[key];
 	        //global.log("ancestor: "+grid.actor.get_parent());
 	        
+	        let window = getFocusApp();
 	        
-	        grid.set_position(monitor.x+(Math.floor(monitor.width / 2 - grid.actor.width / 2)),
-                      Math.floor(monitor.y+(monitor.height / 2 - grid.actor.height / 2) ));
+	        let pos_x = window.get_outer_rect().width / 2  + window.get_outer_rect().x;
+	        let pos_y = window.get_outer_rect().height / 2  + window.get_outer_rect().y;
+	        
+	        grid.set_position(
+	            Math.floor(pos_x - grid.actor.width / 2), 
+	            Math.floor(pos_y - grid.actor.height / 2)
+            );
                     
             grid.show(immediate); 
 	    }
