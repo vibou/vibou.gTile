@@ -64,7 +64,21 @@ function initSettings()
      //You can change those settings to set whatever you want by default
      gridSettings[SETTINGS_AUTO_CLOSE] = true;
      gridSettings[SETTINGS_ANIMATION] = true;
+
+     // Key Binding to Toggle the Window
+     // uncomment this, and set the following command to set the keybinding:
+     //Main.wm.setKeybindingHandler('run_command_9', toggleTiling);
+     
+     /**
+     Use the following command to set the keybinding:
+     
+     % gconftool-2 -s --type string "/apps/metacity/global_keybindings/run_command_9" 'F12'
+     
+     Change the run_command_ to a number that is not used in your Custom Keybindings  (1-9)
+     **/
+
 }
+
 
 /*****************************************************************
                             FUNCTIONS
@@ -186,6 +200,7 @@ function showTiling(immediate)
         
     //global.log("type:"+wm_type+" class:"+wm_class+" layer:"+layer);
     //global.log("focus app: "+focusMetaWindow);
+    
 	if(focusMetaWindow && wm_type != 1 && layer > 0)
 	{	    
 	    Main.uiGroup.add_actor(area);
