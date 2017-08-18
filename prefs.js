@@ -145,7 +145,7 @@ function accel_tab(notebook) {
   
 	let ks_window = new Gtk.ScrolledWindow({'vexpand': true});
         ks_window.add(ks_grid);
-	let ks_label = new Gtk.Label({ label: "Acelerators", use_markup: false, halign: Gtk.Align.START })	
+	let ks_label = new Gtk.Label({ label: "Accelerators", use_markup: false, halign: Gtk.Align.START })	
 	notebook.append_page(ks_window, ks_label);	  
 }
 
