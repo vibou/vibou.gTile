@@ -57,7 +57,6 @@ let status;
 let launcher;
 let grids;
 let monitors;
-let tracker;
 let nbCols;
 let nbRows;
 let area;
